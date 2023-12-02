@@ -3,5 +3,7 @@
 
 int main() {
 
+    day1part1();
+
     return 0;
 }

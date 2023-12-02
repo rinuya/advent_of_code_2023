@@ -30,3 +30,12 @@
 *.exe
 *.out
 *.app
+
+#input files
+input.txt
+
+# vs code
+.vscode
+
+#main binary
+main
