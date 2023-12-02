@@ -6,5 +6,7 @@ int main() {
     day1part1();
     day1part2();
 
+    day2part1();
+
     return 0;
 }
