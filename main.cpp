@@ -10,6 +10,7 @@ int main() {
     day2part2();
 
     day3part1();
+    day3part2();
 
     return 0;
 }
