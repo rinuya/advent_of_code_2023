@@ -9,5 +9,7 @@ int main() {
     day2part1();
     day2part2();
 
+    day3part1();
+
     return 0;
 }

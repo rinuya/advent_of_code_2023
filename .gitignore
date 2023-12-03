@@ -33,6 +33,7 @@
 
 #input files
 input.txt
+test_input.txt
 
 # vs code
 .vscode

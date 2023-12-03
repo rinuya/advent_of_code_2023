@@ -27,4 +27,10 @@ void removeChar(std::string& input, const char toRemove) {
     input.erase(std::remove(input.begin(), input.end(), toRemove), input.end());
 };
 
+template <typename T>
+void removeEntriesFromVec(std::vector<T>& someVec, const T entryToRemove) {
+    auto newEnd = remove(someVec.begin(), someVec.end(), entryToRemove);
+    someVec.erase(newEnd, someVec.end());
+}
+
 #endif
