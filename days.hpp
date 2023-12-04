@@ -8,6 +8,6 @@
 #include "day3/part1.cpp"
 #include "day3/part2.cpp"
 #include "day4/part1.cpp"
-// #include "day4/part2.cpp"
+#include "day4/part2.cpp"
 
 #endif

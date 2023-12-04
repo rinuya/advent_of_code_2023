@@ -2,14 +2,21 @@
 
 using namespace std;
 
-void day4part1() {
+void day4part2() {
 
     ifstream input("day4/input.txt");
     string line;
 
     int sum = 0;
+    int cardCounter = 0;
+    unordered_map<string, int> wonCardCount;
+    for (int i = 1; i <= 201; i++) {
+        wonCardCount[to_string(i)] = 1;
+    }
 
     while (getline(input, line)) {
+        cardCounter++;
+    
         int matches = 0;
         line = line.substr(9);
         vector<string> split = splitString(line, '|');
@@ -27,19 +34,17 @@ void day4part1() {
                 }
             }
         }
-        if (matches > 0) {
-            int addToSum = 1;
-            matches--;
-            while (matches != 0) {
-                addToSum*=2;
-                matches--;
+        for (int c = 1; c <= wonCardCount[to_string(cardCounter)]; c++) {
+            for (int i = 1; i <= matches; i++) {
+                wonCardCount[to_string(cardCounter + i)]+=1;
             }
-            sum+=addToSum;
         }
+
     }
-    input.close();
+    for (auto entry : wonCardCount) {
+        sum+=entry.second;
+    }
 
-   
 
-    cout << "Day4  - Part1: The solution is " << sum << endl;
+    cout << "Day4  - Part2: The solution is " << sum << endl;
 }
