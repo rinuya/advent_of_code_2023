@@ -33,4 +33,13 @@ void removeEntriesFromVec(std::vector<T>& someVec, const T entryToRemove) {
     someVec.erase(newEnd, someVec.end());
 }
 
+
+std::vector<long int> vecStrToLongInt(std::vector<std::string>& someVec) {
+    std::vector<long int> returnVec;
+    for (auto el : someVec) {
+        returnVec.push_back(stoul(el));
+    }
+    return returnVec;
+}
+
 #endif

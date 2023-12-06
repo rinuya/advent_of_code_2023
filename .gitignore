@@ -40,3 +40,7 @@ test_input.txt
 
 #main binary
 main
+
+#old versions (first versions that didn't work)
+part1_old.cpp
+part2_old.cpp
