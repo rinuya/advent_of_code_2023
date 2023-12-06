@@ -12,5 +12,6 @@
 #include "day5/part1.cpp"
 #include "day5/part2.cpp"
 #include "day6/part1.cpp"
+#include "day6/part2.cpp"
 
 #endif
