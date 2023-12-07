@@ -8,6 +8,7 @@
 #include <sstream>
 #include <cctype>
 #include <unordered_map>
+#include <map>
 #include <algorithm>
 
 std::vector<std::string> splitString(const std::string input, const char delimiter) {
