@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void day7part1() {
+void day7part2() {
 
     ifstream input("day7/input.txt");
     string line;
@@ -28,7 +28,7 @@ void day7part1() {
             if (c == 'T') {
                 ch="10";
             } else if (c == 'J') {
-                ch="11";
+                ch="1";
             } else if (c == 'Q') {
                 ch="12";
             } else if (c == 'K') {
@@ -58,9 +58,15 @@ void day7part1() {
                 break;
             } 
             if (el.second == 4) {
-                fours.push_back(thisHand);
-                inserted = true;
-                break;
+                if (containsJoker(hand)){
+                    fives.push_back(thisHand);
+                    inserted = true;
+                    break;   
+                } else {
+                    fours.push_back(thisHand);
+                    inserted = true;
+                    break;
+                }
             }
             if (el.second == 3) {
                 tripAmount++;
@@ -71,15 +77,41 @@ void day7part1() {
         }
         if (inserted == false) {
             if (tripAmount == 1 && pairAmt == 1) {
-                fulls.push_back(thisHand);
+                if (containsJoker(hand)) {
+                    fives.push_back(thisHand);
+                } else {
+                    fulls.push_back(thisHand);
+                }
+                
             } else if (pairAmt == 2) {
-                twopairs.push_back(thisHand);
+                // if one of the pairs is joker, its 4rs. otherwise, its full house
+                if (containsJoker(hand)) {
+                    if (jokerCount(hand) == 1) {
+                        fulls.push_back(thisHand);
+                    } else if (jokerCount(hand) == 2) {
+                        fours.push_back(thisHand);
+                    }
+                } else {
+                    twopairs.push_back(thisHand);
+                }               
             } else if (tripAmount == 1) {
-                threes.push_back(thisHand);
+                if (containsJoker(hand)) {
+                    fours.push_back(thisHand);
+                } else {
+                    threes.push_back(thisHand);
+                }
             } else if (pairAmt == 1) {
-                pairs.push_back(thisHand);
+                if (containsJoker(hand)) {
+                    threes.push_back(thisHand);
+                } else {
+                    pairs.push_back(thisHand);
+                }
             } else {
-                highCards.push_back(thisHand);
+                if (containsJoker(hand)) {
+                    pairs.push_back(thisHand);
+                } else {
+                    highCards.push_back(thisHand);
+                }
             }
         }
     };
@@ -124,5 +156,5 @@ void day7part1() {
         result += el.bet * rank;
     }
 
-    cout << "Day7  - Part1: The solution is " << result << endl;
+    cout << "Day7  - Part2: The solution is " << result << endl;
 }
