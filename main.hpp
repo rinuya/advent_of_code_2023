@@ -10,6 +10,7 @@
 #include <unordered_map>
 #include <map>
 #include <algorithm>
+#include <numeric>
 
 std::vector<std::string> splitString(const std::string input, const char delimiter) {
     // Split a string based on a char and return a vec of the split up tokens
