@@ -18,5 +18,6 @@
 #include "day8/part1.cpp"
 #include "day8/part2.cpp"
 #include "day9/part1.cpp"
+#include "day9/part2.cpp"
 
 #endif

@@ -28,5 +28,7 @@ int main() {
     // day8part2();
 
     day9part1();
+    day9part2();
+    
     return 0;
 }
