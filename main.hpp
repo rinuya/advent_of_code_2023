@@ -44,4 +44,22 @@ std::vector<long int> vecStrToLongInt(std::vector<std::string>& someVec) {
     return returnVec;
 }
 
+std::vector<int> vecStrToInt(std::vector<std::string>& someVec) {
+    std::vector<int> returnVec;
+    for (auto el : someVec) {
+        returnVec.push_back(stoul(el));
+    }
+    return returnVec;
+}
+
+template <typename T>
+bool everyEntryEquals(std::vector<T>& someVec, T value) {
+    for (auto el : someVec) {
+        if (el != value) {
+            return false;
+        }
+    }
+    return true;
+}
+
 #endif
