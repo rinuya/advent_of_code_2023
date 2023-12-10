@@ -11,6 +11,7 @@
 #include <map>
 #include <algorithm>
 #include <numeric>
+#include <queue>
 
 struct Point {
     int x;
