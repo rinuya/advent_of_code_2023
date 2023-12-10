@@ -12,6 +12,11 @@
 #include <algorithm>
 #include <numeric>
 
+struct Point {
+    int x;
+    int y;
+};
+
 std::vector<std::string> splitString(const std::string input, const char delimiter) {
     // Split a string based on a char and return a vec of the split up tokens
     std::vector<std::string> tokens;

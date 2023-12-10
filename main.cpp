@@ -27,8 +27,11 @@ int main() {
     // day8part1();
     // day8part2();
 
-    day9part1();
-    day9part2();
-    
+    // day9part1();
+    // day9part2();
+
+    day10part1();
+    // day10part2();
+
     return 0;
 }
